@@ -1,0 +1,46 @@
+{% if user.is_authenticated %}
+<style>
+    body{
+      padding: 10px;
+      background-color: silver;
+    }
+    #a:hover{
+      text-decoration: none;
+    }
+    #a{
+      float: left;
+     
+    }
+    #email, #name{
+      float: right;
+    }
+    .classname{
+      padding: 15px;
+    }
+  </style>
+<a href="/home/" id="a"> <h1>TrakeUS <br>
+</h1></a>
+ 
+ <h6 id="name">{{user.username}}    <br>
+  <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+ </h6> <h6>
+  <a href="https://t.me/TrakeUS" target="_blank">Official Telegram Channel</a>
+</h6><br>
+ <br><hr><br>
+
+
+<CENter>
+    <div class="recharge" style="height: 50%; width: 50%;">
+      <p>You can cash out from $5</p>
+        <h3 style="color: blue;">Please contact the administrators for withdrawal</h3>
+     <p>1. write your username</p>
+     <p>2. write your email addres and your password</p>
+     <p>3. write down the amount</p>
+     <p>4. write your USDT address</p>
+        <a href="https://t.me/trakeuschat/5">contact us
+        </a>
+     </div>
+</CENter>
+ {% else %}
+<h1>Please Sign In Your Account</h1>
+{% endif %}

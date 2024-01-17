@@ -1,0 +1,48 @@
+{% if user.is_authenticated %}
+<style>
+    body{
+      padding: 10px;
+      background-color: silver;
+    }
+    #a:hover{
+      text-decoration: none;
+    }
+    #a{
+      float: left;
+     
+    }
+    #email, #name{
+      float: right;
+    }
+    .classname{
+      padding: 15px;
+    }
+  </style>
+<a href="/home/" id="a"> <h1>TrakeUS <br>
+</h1></a>
+ 
+ <h6 id="name">{{user.username}}    <br>
+  <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+ </h6> <h6>
+  <a href="https://t.me/TrakeUS" target="_blank">Official Telegram Channel</a>
+</h6><br>
+ <br><hr><br>
+
+
+<CENter>
+    <div class="recharge" style="height: 70%; width: 50%;  padding: 10px;">
+      <h3> Hello {{user.username}}</h3>
+      <p>your Balance is - 
+
+        {% if user.username == "xcho" or user.username == "arman2005"%}
+        150$
+        {%else%}
+            0$
+ {%endif%}     </p>
+      <a href="/recharge/" style="text-decoration: none; margin: 10px;">Recharge</a>
+      <a href="/withdraw/" style="text-decoration: none; margin: 10px;">Withdraw</a>
+     </div>
+</CENter>
+ {% else %}
+<h1>Please Sign In Your Account</h1>
+{% endif %}

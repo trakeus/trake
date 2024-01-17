@@ -1,0 +1,43 @@
+{% if user.is_authenticated %}
+<style>
+    body{
+      padding: 10px;
+      background-color: silver;
+    }
+    #a:hover{
+      text-decoration: none;
+    }
+    #a{
+      float: left;
+     
+    }
+    #email, #name{
+      float: right;
+    }
+    .classname{
+      padding: 15px;
+    }
+  </style>
+<a href="/home/" id="a"> <h1>TrakeUS <br>
+</h1></a>
+ 
+ <h6 id="name">{{user.username}}    <br>
+  <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+ </h6> <h6>
+  <a href="https://t.me/TrakeUS" target="_blank">Official Telegram Channel</a>
+</h6><br>
+ <br><hr><br>
+
+
+<CENter>
+    <div class="recharge" style="height: 50%; width: 50%;">
+        <h3 style="color: blue;">TYkNpKa6odggaw2K8YQNg3Rza82wCk1zvC</h3>
+        Please do not recharge other non-TRC20 (USDT) assets. The funds will arrive in your account in about 10 to 30 minutes after recharging.
+        If it has not arrived for a long time, please refresh this page. <br>
+        <a href="https://t.me/trakeuschat/5">If it has not arrived for a long time, please contact us
+        </a>
+     </div>
+</CENter>
+ {% else %}
+<h1>Please Sign In Your Account</h1>
+{% endif %}
